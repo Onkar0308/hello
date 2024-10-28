@@ -1,12 +1,11 @@
-pipeline{
-	agent any
+pipeline {
+    agent any
 
-
-	stages{
-		stage(build){
-                     steps{
-				sh '\.build.sh'
-				}
-		        }
-	}
+    stages {
+        stage('Build') {
+            steps {
+                sh './build.sh'  // Corrected command to run the script
+            }
+        }
+    }
 }
