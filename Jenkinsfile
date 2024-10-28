@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './build.sh'  // Corrected command to run the script
+                // Ensure the build.sh script is executable
+                sh 'chmod +x ./build.sh'
+                sh './build.sh'  // Now run the script
             }
         }
     }
